@@ -26,4 +26,4 @@ site_name: 'alasja翻译小站'
 
 docs_dir: 'docs'
 
-theme: jekyll-theme-slate
+theme: jekyll-theme-hacker

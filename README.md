@@ -1,2 +1,2 @@
-# alasja.git.io
-do some translate work
+# alasja的翻译小站
+就随便翻翻，主要自用

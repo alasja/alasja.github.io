@@ -26,4 +26,9 @@ site_name: 'alasja翻译小站'
 
 docs_dir: 'docs'
 
+
 theme: jekyll-theme-hacker
+
+title: 'alasja翻译小站'
+SEOTitle: alasja翻译小站 | alasja翻译小站
+description: "就随便翻翻"

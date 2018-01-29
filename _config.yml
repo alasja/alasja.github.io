@@ -1,33 +1,26 @@
-pages:
-  - 主页: 'index.md'
-  - 目录:
-    - GPU Gems3: 'Gems3/intro.md'
+# Site settings
+title:          alasja的翻译小站
+description:    "边学习编翻译一下《GPU Gems》系列"
+url:            "https://alasja.github.io"
 
-markdown_extensions:
-  - admonition
-  - smarty
-  - sane_lists
-  - mdx_math
+# Author
+author:
+  name:         alasja
+  url:          https://alasja.github.io
+  email:        alasja@163.com
 
-extra_css:
-  - css/style.css
-  - css/admonition_fix.css
+# Build settings
+markdown:       kramdown
 
-extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML'
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
+# Gems
+plugins:
+  - jekyll-paginate
 
-repo_url: https://github.com/alasja/alasja.github.io
-
-site_description: '尝试翻译下《GPU Gems》系列'
-
-site_name: 'alasja翻译小站'
-
-docs_dir: 'docs'
-
-
-theme_dir: 'jekyll-theme-hacker'
-
-title: 'alasja翻译小站'
-SEOTitle: alasja翻译小站 | alasja翻译小站
-description: "就随便翻翻"
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5

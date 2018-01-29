@@ -16,9 +16,8 @@ extra_css:
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML'
 
-site_url: https://learnopengl-cn.github.io/
 
-repo_url: https://github.com/LearnOpenGL-CN/LearnOpenGL-CN
+repo_url: https://github.com/alasja/alasja.github.io
 
 site_description: '尝试翻译下《GPU Gems》系列'
 
@@ -27,7 +26,7 @@ site_name: 'alasja翻译小站'
 docs_dir: 'docs'
 
 
-theme: jekyll-theme-hacker
+theme_dir: 'jekyll-theme-hacker'
 
 title: 'alasja翻译小站'
 SEOTitle: alasja翻译小站 | alasja翻译小站

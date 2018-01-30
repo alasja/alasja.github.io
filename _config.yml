@@ -1,0 +1,26 @@
+# Site settings
+title:          alasja的翻译小站
+description:    "边学习编翻译一下《GPU Gems》系列"
+url:            "https://alasja.github.io"
+
+# Author
+author:
+  name:         alasja
+  url:          https://alasja.github.io
+  email:        alasja@163.com
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-paginate
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5

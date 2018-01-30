@@ -7,9 +7,9 @@ site_name: 'GraphicT'
 
 site_description: 'alasja的业余玩具'
 
-site_url: https://GraphicT.github.io/
+site_url: https://alasja.github.io/
 
-repo_url: https://github.com/alasja/GraphicT.github.io
+repo_url: https://github.com/alasja.github.io
 
 markdown_extensions:
   - admonition

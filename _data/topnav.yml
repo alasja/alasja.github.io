@@ -5,14 +5,14 @@ topnav:
   items:
     - title: RTT3
       url: /rtt_index.html
-    - title: GEMS1
-      url: /gems1_index.html
-    - title: GEMS2
-      url: /gems2_index.html
-    - title: GEMS3
-      url: /gems3_index.html
+    # - title: GEMS1
+    #   url: /gems1_index.html
+    # - title: GEMS2
+    #   url: /gems2_index.html
+    # - title: GEMS3
+    #   url: /gems3_index.html
     - title: 其他
-      url: /other_index.html
+      url: /other_graphics_pipeline_part1.html
 
 #Topnav dropdowns
 # topnav_dropdowns:

@@ -1,26 +1,81 @@
-# Site settings
-title:          alasja的业余玩具
-description:    "边学习编翻译一下《GPU Gems》系列"
-url:            "https://alasja.github.io"
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Author
-author:
-  name:         alasja
-  url:          https://alasja.github.io
-  email:        alasja@163.com
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
 
 # Build settings
-markdown:       kramdown
+highlighter: rouge
 
-# Assets
-sass:
-  sass_dir:     _sass
-  style:        compressed
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
 
-# Gems
+site_title: alasja‘s GraphicT
+
 plugins:
-  - jekyll-paginate
+  - jekyll-feed
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       5
+topnav_title: alasja GraphicT
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      sidebar: rtt
+      topnav: topnav
+  -
+    scope:
+      path: "_posts/rtt"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      sidebar: rtt
+      topnav: topnav
+
+sidebars:
+- rtt
+- gems1
+- gems2
+- gems3
+- other
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

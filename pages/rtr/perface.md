@@ -28,8 +28,11 @@ summary: RTR前言.
 ## 致谢
 感谢CCTV
 
---------
+------
 Tomas Akenine-Moller
+
 Eric Hanies
+
 Naty Hoffman
+
 March 2008

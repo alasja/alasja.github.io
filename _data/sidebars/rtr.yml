@@ -7,16 +7,28 @@ entries:
   folders:
 
 
-  - title: Overview
-    output: web, pdf
+  - title: 前言
+    url: /rtr_preface.html
+    output: web
     folderitems:
 
-    - title: Get started
-      url: /index.html
-      output: web, pdf
-      type: homepage
+    - title: 前言
+      url: /rtr_preface.html
+      output: web
+      output: web
 
+  - title: 第一章 介绍
+    url: /rtr_ch1_introduce.html
+    output: web
+    folderitems:
 
+    - title: 内容概览
+      output: web
+      url: /rtr_ch1_overview.html
+
+    - title: 符号及定义
+      url: /rtr_ch1_notation.html
+      output: web
 
   # - title: Tag archives
   #   output: web

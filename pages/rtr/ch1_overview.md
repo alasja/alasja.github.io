@@ -1,11 +1,11 @@
 ---
-title: "前言"
+title: "概览"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: rtr
 layout: default
-permalink: rtr_index.html
-summary: RTR前言.
+permalink: rtr_ch1_overview.html
+summary: RTR整本书概览，都有哪些东西会涉及到。
 ---
 
 ## 前言

@@ -25,6 +25,7 @@ github_username:  alasja
 
 # Build settings
 highlighter: rouge
+lineno: true
 
 markdown: kramdown
 kramdown:
@@ -32,6 +33,7 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
+ lineno: true
 
 site_title: alasja‘s GraphicT
 

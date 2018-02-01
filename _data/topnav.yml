@@ -3,8 +3,8 @@
 topnav:
 - title: Topnav
   items:
-    - title: RTT3
-      url: /rtt_index.html
+    - title: RTR3
+      url: /rtr_index.html
     # - title: GEMS1
     #   url: /gems1_index.html
     # - title: GEMS2
@@ -12,7 +12,7 @@ topnav:
     # - title: GEMS3
     #   url: /gems3_index.html
     - title: 其他
-      url: /other_graphics_pipeline_part1.html
+      url: /index.html
 
 #Topnav dropdowns
 # topnav_dropdowns:

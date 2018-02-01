@@ -49,26 +49,30 @@ defaults:
     values:
       layout: "page"
       comments: true
-      sidebar: rtt
+      sidebar: rtr
       topnav: topnav
   -
     scope:
-      path: "pages/rtt"
-      type: "pages"
+      path: "_posts"
+      type: "posts"
     values:
       layout: "page"
       comments: true
-      sidebar: rtt
       topnav: topnav
 
 sidebars:
-- rtt
+- rtr
 - gems1
 - gems2
 - gems3
 - other
 
 paginate: 10
+date_format: 
+  title: "%B-%-d-%Y"
+
+# Language
+lan: "cn" 
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

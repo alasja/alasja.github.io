@@ -38,6 +38,12 @@ header.carousel .fill {
     background-size: cover;
 }
 
+.post-date {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
 /* 404 Page Styles */
 
 .error-404 {

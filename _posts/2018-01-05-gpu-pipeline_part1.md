@@ -3,8 +3,8 @@ title: "GPU图形渲染管线一"
 keywords: gpu pipeline
 tags: [gpu pipeline]
 hide_sidebar: true
-layout: default
-permalink: other_graphics_pipeline_part1.html
+layout: post
+permalink: /other_:title.html
 summary: 图形绘制管线描述.
 ---
 

@@ -30,6 +30,32 @@ entries:
       url: /rtr_ch1_notation.html
       output: web
 
+  - title: 第二章 图形渲染管线
+    url: /rtr_ch2_architecture.html
+    output: web
+    folderitems:
+
+    - title: 2.1 架构
+      output: web
+      url: /rtr_ch2_architecture.html
+
+    - title: 2.2 应用阶段
+      url: /rtr_ch2_application.html
+      output: web
+
+    - title: 2.3 几何阶段
+      output: web
+      url: /rtr_ch2_geometry.html
+
+    - title: 2.4 栅格阶段
+      url: /rtr_ch2_rasterizer.html
+      output: web
+
+    - title: 2.5 管线的一切
+      url: /rtr_ch2_pipeline.html
+      output: web
+
+
   # - title: Tag archives
   #   output: web
   #   folderitems:

@@ -55,6 +55,41 @@ entries:
       url: /rtr_ch2_pipeline.html
       output: web
 
+  - title: 第三章 GPU
+    output: web
+    folderitems:
+
+    - title: 3.1 GPU流水线概览
+      output: web
+      url: /rtr_ch3_gpu_pipeline.html
+
+    - title: 3.2 可编程着色阶段
+      url: /rtr_ch3_shader_stage.html
+      output: web
+
+    - title: 3.3 着色编程的发展
+      output: web
+      url: /rtr_ch3_shader_evol.html
+
+    - title: 3.4 顶点着色器
+      url: /rtr_ch3_vertex.html
+      output: web
+
+    - title: 3.5 几何着色器
+      url: /rtr_ch3_geometry.html
+      output: web
+
+    - title: 3.6 像素着色器
+      url: /rtr_ch3_pixel.html
+      output: web
+
+    - title: 3.7 合并阶段
+      url: /rtr_ch3_merging.html
+      output: web
+
+    - title: 3.8 特效
+      url: /rtr_ch3_effects.html
+      output: web
 
   # - title: Tag archives
   #   output: web

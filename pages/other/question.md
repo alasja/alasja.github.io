@@ -28,3 +28,8 @@ http://blog.csdn.net/good3651/article/details/53420721
 
 <font color="tomato">
 <font color="limegreen">
+
+## 数学记号
+1. 符号 \varphi \theta
+2. 集合属于 \in 
+3. \frac{}{} 分数 1/2

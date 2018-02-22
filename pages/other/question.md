@@ -26,10 +26,19 @@ http://www.cnblogs.com/TracePlus/
 https://unitylist.com/browse/
 http://blog.csdn.net/good3651/article/details/53420721
 
+常用网站
+tex符号  https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+画图识别符号 http://detexify.kirelabs.org/classify.html
+希腊字符 https://www.rapidtables.com/math/symbols/greek_alphabet.html#
+翻译参考
+http://blog.csdn.net/chenjinxian_3d/article/details/52650001
+
 <font color="tomato">
 <font color="limegreen">
 
 ## 数学记号
 1. 符号 \varphi \theta
 2. 集合属于 \in 
-3. \frac{}{} 分数 1/2
+3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
+4. ^{\prime} 一撇
+5.  \, for a thin space abab; \; for a wider space abab.  \quad and \qquad are large spaces: 

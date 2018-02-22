@@ -91,6 +91,34 @@ entries:
       url: /rtr_ch3_effects.html
       output: web
 
+  - title: 第四章 变换
+    output: web
+    folderitems:
+
+    - title: 4.1 基础变换
+      output: web
+      url: /rtr_ch4_basic.html
+
+    - title: 4.2 特殊矩阵和操作
+      url: /rtr_ch4_special.html
+      output: web
+
+    - title: 4.3 四元数
+      output: web
+      url: /rtr_ch4_quaternions.html
+
+    - title: 4.4 顶点混合
+      url: /rtr_ch4_vertex.html
+      output: web
+
+    - title: 4.5 变形
+      url: /rtr_ch4_morphing.html
+      output: web
+
+    - title: 4.6 投影
+      url: /rtr_ch4_proj.html
+      output: web
+
   # - title: Tag archives
   #   output: web
   #   folderitems:

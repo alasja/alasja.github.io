@@ -33,8 +33,14 @@ tex符号  https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tuto
 翻译参考
 http://blog.csdn.net/chenjinxian_3d/article/details/52650001
 
+html颜色名
+http://www.w3school.com.cn/tags/html_ref_colornames.asp
+
 <font color="tomato">
 <font color="limegreen">
+<font color="Chocolate">
+<font color="BlueViolet">
+<font color="DarkGoldenRod">
 
 ## 数学记号
 1. 符号 \varphi \theta

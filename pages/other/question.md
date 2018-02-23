@@ -42,3 +42,10 @@ http://blog.csdn.net/chenjinxian_3d/article/details/52650001
 3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
 4. ^{\prime} 一撇
 5.  \, for a thin space abab; \; for a wider space abab.  \quad and \qquad are large spaces: 
+6. 矩阵
+\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}.  \tag{4.13}

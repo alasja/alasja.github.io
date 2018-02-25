@@ -20,6 +20,21 @@
 1. PBS理论 深度研究
 
 
+[Everything has Fresnel]
+http://gad.qq.com/program/translateview/7195431
+着色中的数学和物理原理
+http://gad.qq.com/program/translateview/7172663
+免费音乐
+http://gad.qq.com/program/translateview/7170854
+图像程序员的面试问题
+http://gad.qq.com/program/translateview/7181093
+像素体素的区别
+http://gad.qq.com/program/translateview/7181014
+非常非常重要网站
+http://blog.selfshadow.com/
+
+拳头技术文章
+https://engineering.riotgames.com/tags/rendering
 
 一些博客介绍
 http://www.cnblogs.com/TracePlus/
@@ -44,7 +59,7 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 
 ## 数学记号
 1. 符号 \varphi \theta
-2. 集合属于 \in 
+2. 集合属于 \in   正负\pm
 3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
 4. ^{\prime} 一撇
 5.  \, for a thin space abab; \; for a wider space abab.  \quad and \qquad are large spaces: 

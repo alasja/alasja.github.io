@@ -19,7 +19,41 @@
 
 1. PBS理论 深度研究
 
+读书计划 中午及学习时间内容
+1. 《GPU Gems1》
+2. 《Real Time Renderring》  
+3. 《SICP》计算机程序的构造和解释  
+4. 《CSAPP》深入理解计算机系统      -6   
+5. 《计算机程序设计艺术 卷一 基本算法》
 
+早起及晚上班车及睡前阅读内容
+5. 《数学大师：从芝诺到庞加莱》  
+6. 《货币战争》1-3  -11   
+7. 《国富论》  
+8. 《1984》  
+9. 《故事》  
+10. 《常识》  -15   
+11. 《鱼羊野史》
+12. 《思考，快与慢》 《清醒思考的艺术》 《拆掉思维里的墙》
+13. 《中国哲学简史》
+14. 《越弱越暗越美丽》 《暗时间》
+
+
+[Everything has Fresnel]
+http://gad.qq.com/program/translateview/7195431
+着色中的数学和物理原理
+http://gad.qq.com/program/translateview/7172663
+免费音乐
+http://gad.qq.com/program/translateview/7170854
+图像程序员的面试问题
+http://gad.qq.com/program/translateview/7181093
+像素体素的区别
+http://gad.qq.com/program/translateview/7181014
+非常非常重要网站
+http://blog.selfshadow.com/
+
+拳头技术文章
+https://engineering.riotgames.com/tags/rendering
 
 一些博客介绍
 http://www.cnblogs.com/TracePlus/
@@ -44,7 +78,7 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 
 ## 数学记号
 1. 符号 \varphi \theta
-2. 集合属于 \in 
+2. 集合属于 \in   正负\pm
 3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
 4. ^{\prime} 一撇
 5.  \, for a thin space abab; \; for a wider space abab.  \quad and \qquad are large spaces: 

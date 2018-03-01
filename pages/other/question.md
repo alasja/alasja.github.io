@@ -77,7 +77,7 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 <font color="DarkGoldenRod">
 
 ## 数学记号
-1. 符号 \varphi \theta
+1. 符号 \varphi \theta   约等 \approx
 2. 集合属于 \in   正负\pm
 3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
 4. ^{\prime} 一撇

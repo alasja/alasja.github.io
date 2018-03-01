@@ -40,8 +40,8 @@ Pixel operation 又称为 Raster Operation(在文献【2】中是使用 Raster O
 2. Texture operation，纹理操作，也就是根据像素的纹理坐标，查询对应的纹理值; 
 3. Blending 混色，根据目前已经画好的颜色，与正在计算的颜色的透明度(Alpha)， 混合为两种颜色，作为新的颜色输出。通常称之为 alpha 混合技术。 当在屏幕 上绘制某个物体时，与每个像素都相关联的哟一个 RGB 颜色值和一个 Z 缓冲器 深度值，另外一个称为是 alpha 值，可以根据需要生成并存储，用来描述给定像 素处的物体透明度。如果 alpha 值为 1.0，则表示物体不透明;如果值为 0，表示 该物体是透明的，
 
-	从绘制管线得到一个 RGBA，使用 over 操作符将该值与原像素颜色值进行 混合，公式如下:
-![公式1](http://img.blog.csdn.net/20170717132403235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQkRhbGFzamE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+	从绘制管线得到一个 RGBA，使用 over 操作符将该值与原像素颜色值进行 混合，公式如下:$c_d = a \cdot c_a + (1-a)c_s \qquad 【over操作符】$
+
 	a是透明度值(alpha)，ca 表示透明物体的颜色，cs 表示混合前像素的颜色
 值， cd 是最终计算得到的颜色值。Over 操作可以用于照片混合和物体合成绘制 方面，这个过程称为合成(compositing)。可以联想一下，OGRE 中有一种技术称为 compositor(合成器)。
 
@@ -66,7 +66,12 @@ Pixel operation 又称为 Raster Operation(在文献【2】中是使用 Raster O
 Z buffer 应该是大家最为熟悉的缓冲区类型，又称为 depth buffer，即深度缓 冲区，其中存放的是视点到每个像素所对应的空间点的距离衡量，称之为 Z 值 或者深度值。可见物体的 Z 值范围位于【0，1】区间，默认情况下，最接近眼 睛的顶点(近裁减面上)其 Z 值为 0.0，离眼睛最远的顶点(远裁减面上)其 Z 值为 1.0。使用 z buffer 可以用来判断空间点的遮挡关系，著名的深度缓冲区算 法(depth-buffer method，又称 Z 缓冲区算法)就是对投影平面上每个像素所对 应的 Z 值进行比较的。
 
 Z 值并非真正的笛卡儿空间坐标系中的欧几里德距离(Euclidean distance)， 而是一种“顶点到视点距离”的相对度量。所谓相对度量，即这个值保留了与其他 同类型值的相对大小关系。在 steve Baker 撰写的文章“Learning to love your Z-buffer”中将 GPU 对 Z 值的计算公式描述为:
-![公式2](http://img.blog.csdn.net/20170717132834715?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQkRhbGFzamE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+$$
+z\_buffer\_value = (1 << N)*\frac{a\ *\ z + b}{z} \\
+a = \frac{f}{f-n}\\
+b = \frac{f\ *\ n}{n - f}
+$$
 
 其中 f 表示视点到远裁减面的空间距离， n 表示视点到近裁减面的空间距 离， z 表示视点到顶点的空间距离，N 表示 Z 值精度。
 

@@ -89,3 +89,4 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 0 & 0 & 1 & 0\\
 0 & 0 & 0 & 1
 \end{pmatrix}.  \tag{4.13}
+7. 对齐 \begin{align} \end{align} 每行的第一个&符号的位置作为对齐位置 常用于=号对齐。

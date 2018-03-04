@@ -21,7 +21,7 @@ $$
 E(h,p,r) = R_z(r)R_x(p)R_y(h). \tag{4.17}
 $$
 
-E是旋转矩阵的串联，所以它是正交的。所以它的逆可以表示为：$E^{-1} = E^T = (R_zR_x_R_y)^T = R_y^TR_x^TR_z^T$。所以可以简单直接的使用E的转置矩阵。
+E是旋转矩阵的串联，所以它是正交的。所以它的逆可以表示为：$ E^{-1} = E^T = (R_zR_xR_y)^T = R_y^TR_x^TR_z^T $。所以可以简单直接的使用E的转置矩阵。
 
 欧拉角h p r表示了依赖顺序，以及`head, pitch, roll`分别绕他们的轴旋转多少度(<font color="DarkGoldenRod">注，head有时被称为yaw。这些角也被称为'rolls'，比如pitch是x-roll等</font>)。这种变换很直观，也很容易以外行的语言来讨论。比方说，改变head的角度，就是让观察者摇头，改变pitch的角度则是点头，roll则是左右摇摆他的头。我们不说绕xyz轴旋转，而使用head,pitch和roll。注意这个变换不仅可以用于相机，也可以用于其他任意实体。该变换可以使用世界坐标轴来变换，也可以用局部坐标轴。
 
@@ -31,16 +31,18 @@ E是旋转矩阵的串联，所以它是正交的。所以它的逆可以表示�
 这里有另一个方法来观察自由度丢失的问题，在欧拉矩阵$E(h,p,r)$中，假设$p = \pi / 2$，看看会发生什么？
 
 $$
-E(h, \pi/2, r) = \begin{pmatrix}
+\begin{align}
+E(h, \pi/2, r) &= \begin{pmatrix}
 cos(r)cos(h) - sin(r)sin(h) & 0 & cos(r)sin(h) + sin(r)cos(h) \\
 sin(r)cos(h) - cos(r)sin(h) & 0 & sin(r)sin(h) + cos(r)cos(h) \\
 0 & 1 & 0
 \end{pmatrix} \\
-= \begin{pmatrix}
+&= \begin{pmatrix}
 cos(r + h) & 0 & sin(r + h) \\
 sin(r + h) & 0 & -cos(r + h) \\
 0 & 1 & 0
 \end{pmatrix}. \tag{4.18}
+\end{align}
 $$
 
 我们可以看到最终的结果，只取决(r+h)的和，所以我们认为有一个自由度丢失了。
@@ -80,10 +82,12 @@ $$
 因此，欧拉角的参数hpr可以使用矩阵F的元素来带入函数`atan2(y, x)`来求得，如下表达式：
 
 $$
-h = atan2(-f_{20},f_{22}),\\
-p = arcsin(f_{21}),\\
-r = atan2(-f_{01},f_{11}).  \tag{4.22}
+\begin{align}
+h &= atan2(-f_{20},f_{22}),\\
+p &= arcsin(f_{21}),\\
+r &= atan2(-f_{01},f_{11}). \\ \end{align} \tag{4.22}
 $$
+
 
 不过，我们需要处理一种特殊情况。当$cos(p)=0$的时候，则$f_{01} = f_{11} = 0$，也就不能使用atan2函数了。$cos(p)=0时，sin(p) = \pm 1$，所以F可以简化成如下形式：
 
@@ -129,14 +133,16 @@ $$
 第一步是要计算正交基。第一个轴是r，也就是我们要绕着旋转的轴。现在我们来看如何寻找第二个轴s，我们知道第三个轴t等于前两个轴的叉乘，$t = r x s$。有个数学上的方法来找到r的最小的元素(绝对值)，并设置为0。然后交换其余两个元素，再把第一个设负值。数学上的表达如下：
 
 $$
-\bar s = \begin{cases}
+\begin{align}
+\bar s &= \begin{cases}
 (0,-r_z,r_y), & if |r_x| \lt |r_y| and |r_x| \lt |r_z|, \\
 (-r_z,0,r_x), & if |r_y| \lt |r_x| and |r_y| \lt |r_z|, \\
 (-r_y,r_x,0), & if |r_z| \lt |r_x| and |r_z| \lt |r_y|,  
 \end{cases} \\
 
-s = \bar s / \Vert{\bar s}\Vert, \\
-t = r \times s.  \tag{4.24}
+s &= \bar s / \Vert{\bar s}\Vert, \\
+t &= r \times s.  \tag{4.24}
+\end{align}
 $$
 
 因为$\bar s$与r肯定是垂直，并且$(r, s, t)$是一对正交基。我们用这三个向量行来表示矩阵：

@@ -17,9 +17,11 @@ summary: 第四章.
 定义：四元数$\hat q$可以由以下方式来定义，每种方式都是等价的：
 
 $$
-\hat q = (q_v,q_w) = iq_x + jq_y + kq_z + q_w = q_v + q_w,\\
-q_v = iq_x + jq_y + kq_z = (q_x, q_y, q_z),\\
-i^2 = j^2 = k^2 = -1, \; jk = -kj = i, \; ki = -ik = j, \; ij = -ji = k. \tag{4.28}
+\begin{align}
+& \hat q = (q_v,q_w) = iq_x + jq_y + kq_z + q_w = q_v + q_w,\\
+& q_v = iq_x + jq_y + kq_z = (q_x, q_y, q_z),\\
+& i^2 = j^2 = k^2 = -1, \; jk = -kj = i, \; ki = -ik = j, \; ij = -ji = k. \tag{4.28}
+\end{align}
 $$
 
 <font color="tomato">变量$q_w是\hat q$的实部。$q_v$是虚部，i, j, k被称为虚部单位。</font>
@@ -28,28 +30,33 @@ $$
 
 $$
 乘法：\\
-\hat q \hat r = (q_v, q_w)(r_v, r_w) \\
-= (q_v \times r_v + r_wq_v + q_wr_v, q_wr_w - q_v \cdot r_v)\\
-= i(q_yr_z - q_zr_y + r_wq_x + q_wr_x)\\
-+j(q_zr_x - q_xr_z + r_wq_y + q_wr_y)\\
-+k(q_xr_y - q_yr_x + r_wq_z + q_wr_z)\\
-+ q_wr_w - q_xr_x - q_yr_y - q_zr_z.  \tag{4.29}
+\begin{align}
+\hat q \hat r &= (q_v, q_w)(r_v, r_w) \\
+&= (q_v \times r_v + r_wq_v + q_wr_v, q_wr_w - q_v \cdot r_v)\\
+&= i(q_yr_z - q_zr_y + r_wq_x + q_wr_x)\\
+&+j(q_zr_x - q_xr_z + r_wq_y + q_wr_y)\\
+&+k(q_xr_y - q_yr_x + r_wq_z + q_wr_z)\\
+&+ q_wr_w - q_xr_x - q_yr_y - q_zr_z.  \tag{4.29} \end{align}
 $$
 
 从上面的等式可以看到，我们同时使用了点乘和叉乘来完成两个四元数的乘法计算。四元数的相加、共轭、规范化和单位定义如下：
 
 $$
-Addition:\quad \hat q + \hat r = (q_v, q_w) + (r_v, r_w) = (q_v + r_v, q_w + r_w). \\
-Conjugate:\quad \hat q^* = (q_v, q_w)^* = (-q_v, q_w).\\
-Norm:\quad n(\hat q) = \sqrt{\hat q \hat q^*} = \sqrt{\hat q^* \hat q} = \sqrt{q_v \cdot q_v + q_w^2} = \sqrt{q_x^2 + q_y^2 + q_z^2 + q_w^2}.\\
-Identity:\quad \hat i = (0,1). \tag{4.30}
+\begin{align}
+Addition:&\quad \hat q + \hat r = (q_v, q_w) + (r_v, r_w) = (q_v + r_v, q_w + r_w). \\
+Conjugate:&\quad \hat q^* = (q_v, q_w)^* = (-q_v, q_w).\\
+Norm:&\quad n(\hat q) = \sqrt{\hat q \hat q^*} = \sqrt{\hat q^* \hat q} = \sqrt{q_v \cdot q_v + q_w^2} = \sqrt{q_x^2 + q_y^2 + q_z^2 + q_w^2}.\\
+Identity:&\quad \hat i = (0,1). \tag{4.30}
+\end{align}
 $$
 
 规范化$n(\hat q) = \sqrt{\hat q \hat q^*}$的结果很简洁（如上），四元数的虚部没有了，只剩下一个实部。规范化有时也记作$n(\hat q) = \Vert\hat q\Vert$[808]。从上面的定义我们能推导出四元数的逆，记作$\hat q^{-1}$。逆必然满足等式$\hat q^{-1}\hat q = \hat q \hat q^{-1} = 1$，这是逆的乘法属性。
 
 $$ 
-n(\hat q)^2 = \hat q \hat q^* \\
-\frac{\hat q \hat q^*}{n(\hat q)^2} = 1. \tag{4.31}
+\begin{align}
+n(\hat q)^2 &= \hat q \hat q^* \\
+\frac{\hat q \hat q^*}{n(\hat q)^2} &= 1. \tag{4.31}
+\end{align}
 $$
 
 所以我们得出四元数的逆的表达式：
@@ -64,19 +71,25 @@ $$
 
 **共轭推论：**
 $$
-(\hat q^*)^* = \hat q,\\
-(\hat q + \hat r)^* = \hat q^* + \hat r^*,\\
-(\hat q\hat r)^* = \hat r^* \hat q^*. \tag{4.33}
+\begin{align}
+(\hat q^*)^* &= \hat q,\\
+(\hat q + \hat r)^* &= \hat q^* + \hat r^*,\\
+(\hat q\hat r)^* &= \hat r^* \hat q^*. \tag{4.33}
+\end{align}
 $$
 **规范化推论：**
 $$
-n(\hat q^*) = n(\hat q),\\
-n(\hat q\hat r) = n(\hat q)n(\hat r). \tag{4.34}
+\begin{align}
+n(\hat q^*) &= n(\hat q),\\
+n(\hat q\hat r) &= n(\hat q)n(\hat r). \tag{4.34}
+\end{align}
 $$
 **乘法定律：**
 $$
-\hat p(s\hat q + t\hat r) = s\hat p \hat q + t\hat p \hat r,\\
-(s\hat p + r\hat q)\hat r = s\hat q \hat r + t \hat q \hat r. \tag{4.35}
+\begin{align}
+\hat p(s\hat q + t\hat r) &= s\hat p \hat q + t\hat p \hat r,\\
+(s\hat p + r\hat q)\hat r &= s\hat q \hat r + t \hat q \hat r. \tag{4.35}
+\end{align}
 $$
 
 **结合律：**
@@ -94,8 +107,10 @@ $$
 对于三维向量$u_q$来说，它的模$\Vert u_q \Vert = 1$，因为：
 
 $$
-n(\hat q) = n(sin\theta u_q, cos\theta) = \sqrt{sin^2\theta(u_q \cdot u_q) + cos^2\theta} \\
-= \sqrt{sin^2\theta + cos^2\theta} = 1.  \tag{4.37}
+\begin{align}
+n(\hat q) = n(sin\theta u_q, cos\theta) &= \sqrt{sin^2\theta(u_q \cdot u_q) + cos^2\theta} \\
+&= \sqrt{sin^2\theta + cos^2\theta} = 1.  \tag{4.37}
+\end{align}
 $$
 
 当且仅当$u_q \cdot u_q = 1 = \Vert u_q \Vert^2$的时候上述等式才成立。在下一节中我们会看到，单位四元数在构建旋转和朝向的是多么的高效和完美。在这之前，我们再介绍一些单位四元数的操作。
@@ -175,8 +190,10 @@ $$
 要解这些等式的关键是$q_w$是已知的，然后向量$v_q$就能被计算出来，四元数也就推算出来。$M^q$的trace的计算如下：
 
 $$
-tr(M^q) = 4 - 2s(q_x^2 + q_y^2 + q_z^2) = 4(1 - \frac{q_x^2 + q_y^2 + q_z^2}{q_x^2 + q_y^2 + q_z^2 + q_w^2})\\
-= \frac{4q_w^2}{q_x^2 + q_y^2 + q_z^2 + q_w^2} = \frac{4q_w^2}{n(\hat q)}. \tag{4.45}
+\begin{align}
+tr(M^q) = 4 - 2s(q_x^2 + q_y^2 + q_z^2) & = 4(1 - \frac{q_x^2 + q_y^2 + q_z^2}{q_x^2 + q_y^2 + q_z^2 + q_w^2})\\
+& = \frac{4q_w^2}{q_x^2 + q_y^2 + q_z^2 + q_w^2} = \frac{4q_w^2}{n(\hat q)}. \tag{4.45}
+\end{align}
 $$
 
 所以单位四元数的各个分量的表达式如下：
@@ -199,10 +216,12 @@ $$
 这表示$m_{00},m_{11},m_{22}，u$中最大的一个，也代表了$q_x,q_y,q_z,q_w$中最大的一个。如果$q_w$是最大的，则可以使用表达式4.46来计算除法得到四元数。其他情况下，我们先看下面的等式：
 
 $$
-4q_x^2 = +m_{00} - m_{11} - m_{22} + m_{33},\\
-4q_y^2 = -m_{00} + m_{11} - m_{22} + m_{33},\\
-4q_z^2 = -m_{00} - m_{11} - m_{22} + m_{33},\\
-4q_w^2 = tr(M_q).  \tag{4.48}
+\begin{align}
+4q_x^2 &= +m_{00} - m_{11} - m_{22} + m_{33},\\
+4q_y^2 &= -m_{00} + m_{11} - m_{22} + m_{33},\\
+4q_z^2 &= -m_{00} - m_{11} - m_{22} + m_{33},\\
+4q_w^2 &= tr(M_q).  \tag{4.48}
+\end{align}
 $$
 
 我们用这几个等式来计算出$q_x,q_y,q_z$中最大的一个，然后使用表达式4.44来计算四元数结果。噢，很幸运，已经有代码实现这个功能了——详见本章的`扩展阅读和资源`。
@@ -273,9 +292,11 @@ $$
 在这个等式中，我们使用下面这些计算：
 
 $$
-v = s \times t,\\
-e = cos(2\theta) = s \cdot t, \\
-h = \frac{1-cos(2\theta)}{sin^2(2\theta)} = \frac{1 - e}{v \cdot v} = \frac{1}{1 + e}.  \tag{4.55}
+\begin{align}
+v &= s \times t,\\
+e &= cos(2\theta) = s \cdot t, \\
+h &= \frac{1-cos(2\theta)}{sin^2(2\theta)} = \frac{1 - e}{v \cdot v} = \frac{1}{1 + e}.  \tag{4.55}
+\end{align}
 $$
 
 如上所示，所有的平方根和三角函数都在简化中消除了，所以这是构建矩阵的一个相当有效率的方法。

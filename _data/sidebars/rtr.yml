@@ -119,6 +119,42 @@ entries:
       url: /rtr_ch4_proj.html
       output: web
 
+  - title: 第五章 视觉表现
+    output: web
+    folderitems:
+
+    - title: 5.1 视觉现象
+      output: web
+      url: /rtr_ch5_pheno.html
+
+    - title: 5.2 光源
+      url: /rtr_ch5_lights.html
+      output: web
+
+    - title: 5.3 材质
+      output: web
+      url: /rtr_ch5_material.html
+
+    - title: 5.4 传感器
+      url: /rtr_ch5_sensor.html
+      output: web
+
+    - title: 5.5 着色器
+      url: /rtr_ch5_shading.html
+      output: web
+
+    - title: 5.6 锯齿和抗锯齿
+      url: /rtr_ch5_aliasing.html
+      output: web
+
+    - title: 5.7 透明度和混合
+      url: /rtr_ch5_alpha.html
+      output: web
+
+    - title: 5.8 Gamma矫正
+      url: /rtr_ch5_gamma.html
+      output: web
+
   # - title: Tag archives
   #   output: web
   #   folderitems:

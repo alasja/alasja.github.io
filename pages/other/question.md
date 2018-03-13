@@ -80,8 +80,10 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 1. 符号 \varphi \theta   约等 \approx
 2. 集合属于 \in   正负\pm
 3. \frac{}{} 分数 1/2 \phi \varphi  ϕφ
-4. ^{\prime} 一撇
+4. ^{\prime} 一撇 单引号即可
 5.  \, for a thin space abab; \; for a wider space abab.  \quad and \qquad are large spaces: 
+\bigotimes 圆圈中乘号
+
 6. 矩阵
 \begin{pmatrix}
 1 & 0 & 0 & 0\\
@@ -90,3 +92,7 @@ http://www.w3school.com.cn/tags/html_ref_colornames.asp
 0 & 0 & 0 & 1
 \end{pmatrix}.  \tag{4.13}
 7. 对齐 \begin{align} \end{align} 每行的第一个&符号的位置作为对齐位置 常用于=号对齐。
+
+terms:
+irradiance 辐照度
+radiance 辐射率

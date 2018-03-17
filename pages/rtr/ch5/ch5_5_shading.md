@@ -118,25 +118,25 @@ $$
 
 ``` c
 float3 Shade(float3 p,
-			 float3 n,
-			 uniform float3 pv,
-			 uniform float3 Kd,
-			 uniform float3 Ks,
-			 uniform float m,
-			 uniform unit lightCount,
-			 uniform float3 l[MAXLIGHTS],
-			 uniform float3 EL[MAXLIGHTS])
+             float3 n,
+             uniform float3 pv,
+             uniform float3 Kd,
+             uniform float3 Ks,
+             uniform float m,
+             uniform unit lightCount,
+             uniform float3 l[MAXLIGHTS],
+             uniform float3 EL[MAXLIGHTS])
 {
-	float3 v = normalize(pv - p);
-	float3 Lo = float3(0,0f, 0,0f, 0.0f);
-	for (unit k = 0; k < lightCount; k++)
-	{
-		float3 h = normalize(v + l[k]);
-		float cosTh = saturate(dot(n,h));
-		float cosTi = saturate(dot(n, l[k]));
-		Lo += (Kd + Ks * pow(cosTh, m)) * EL[k] * cosTi;  // 书上多了一个左括号
-	}
-	return Lo;
+    float3 v = normalize(pv - p);
+    float3 Lo = float3(0,0f, 0,0f, 0.0f);
+    for (unit k = 0; k < lightCount; k++)
+    {
+        float3 h = normalize(v + l[k]);
+        float cosTh = saturate(dot(n,h));
+        float cosTi = saturate(dot(n, l[k]));
+        Lo += (Kd + Ks * pow(cosTh, m)) * EL[k] * cosTi;  // 书上多了一个左括号
+    }
+    return Lo;
 }
 ```
 

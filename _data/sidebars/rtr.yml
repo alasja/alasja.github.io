@@ -143,7 +143,7 @@ entries:
       url: /rtr_ch5_shading.html
       output: web
 
-    - title: 5.6 锯齿和抗锯齿
+    - title: 5.6 走样和反走样
       url: /rtr_ch5_aliasing.html
       output: web
 

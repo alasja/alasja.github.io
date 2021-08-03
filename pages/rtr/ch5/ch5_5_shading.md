@@ -11,10 +11,10 @@ permalink: rtr_ch5_shading.html
 我们使用的公式中包括漫反射和高光部分。漫反射部分很简单。根据上一节中的定义，我们可以得到漫反射出射度$M_{diff}$是光线辐照度$E_L$，它的方向*l*和漫反射颜色的函数：
 
 $$
-M_{diff} = c_{diff} \bigotimes E_L \overline{cos} \theta_i.    \tag{5.3}
+M_{diff} = c_{diff} \otimes E_L \overline{cos} \theta_i.    \tag{5.3}
 $$
 
-这里$\bigotimes$表示对向量按位乘（这里都是RGB向量）。
+这里$\otimes$表示对向量按位乘（这里都是RGB向量）。
 
 因为我们假定漫反射在各个方向上的辐射度$L_{diff}$都是一样，于是得到以下关系式（7.5.1会详细解释原因）：
 
@@ -25,7 +25,7 @@ $$
 将公式5.3，5.4连起来，我们可以得到：
 
 $$
-L_{diff} = \frac{c_{diff}}{\pi} \bigotimes E_L \overline{cos} \theta_i. \tag{5.5}
+L_{diff} = \frac{c_{diff}}{\pi} \otimes E_L \overline{cos} \theta_i. \tag{5.5}
 $$
 
 这种漫反射着色方式也被称为`Lambertian`， 它遵从`兰伯特定律(Lambert's law)`，这个定律定义了理想漫反射表面输出的辐射率跟$\overline{cos}\theta_i$成正比。注意，这个限制范围的余弦因子（一般使用法线*n*与光线*l*点乘得到，使用max(n·l,0）并不是兰伯特表面特有的；正如我们看到的，它一般使用在辐照度上。兰伯特表面的特点是输出的辐射率正比与辐照度。只要你看过兰伯特的着色代码，就会发现除了$1/\pi$跟等式5.5很相像。这个因子在实时渲染中一般已经包含在$E_L$中了。（7.5节会深入相关细节）
@@ -33,7 +33,7 @@ $$
 类似公式5.3，高光的等式如下：
 
 $$
-M_{spec} = c_{spec} \bigotimes E_L \overline{cos} \theta_i.    \tag{5.6}
+M_{spec} = c_{spec} \otimes E_L \overline{cos} \theta_i.    \tag{5.6}
 $$
 
 高光项比漫反射要复杂一些，因为它对方向的依赖。在这里，我们使用`半程向量(half vector)h`，之所以这么叫是因为它是视线向量*v*和光线向量*l*的中值。计算方法如下：
@@ -58,20 +58,20 @@ $$
 需要注意的是，与$L_{diff}不同，L_{spec}$取决于视线向量*v*（非直接的，实际是取决于向量*h*)。$L_{spec}$随着向量*h，v*的夹角减小而增大。变化的速度则由参数*m*决定，它代表表面的光泽度。增大*m*会使得高光更小、更亮。结合等式5.6和5.8得到高光项的着色计算公式：
 
 $$
-L_{spec}(v) = \frac{m + 8}{8 \pi} \overline{cos}^m \theta_h c_{spec} \bigotimes E_L \overline{cos} \theta_i.   \tag{5.9}
+L_{spec}(v) = \frac{m + 8}{8 \pi} \overline{cos}^m \theta_h c_{spec} \otimes E_L \overline{cos} \theta_i.   \tag{5.9}
 $$
 
 由上面可得，完整的计算这两项的着色公式是：
 
 $$
-L_o(v) = \left( \frac{c_{diff}}{\pi} + \frac{m + 8}{8 \pi} \overline{cos}^m \theta_h c_{spec} \right) \bigotimes E_L \overline{cos} \theta_i.   \tag{5.10}
+L_o(v) = \left( \frac{c_{diff}}{\pi} + \frac{m + 8}{8 \pi} \overline{cos}^m \theta_h c_{spec} \right) \otimes E_L \overline{cos} \theta_i.   \tag{5.10}
 $$
 
 这个着色等式跟`Blinn-Phong`着色很相似，它是由Blinn在1977年的文章中首次提出：
 （<font color="DarkGoldenRod">注：Blinn的论文实际上说的是一个完全不同着色公式，`Blinn-Phong`等式只是在提及之前工作（Phong前两年发表的多个着色公式）的部分，简略的提了一下。但是神奇的是，这个`Blinn-Phong`公式迅速的被大家所接受，以至于他的论文的主要内容都被忽略了，直到四年后`Cook-Torrance`论文才重见天日 </font>）
 
 $$
-L_o(v) = \left( \overline{cos} \theta_i c_{diff} + \overline{cos}^m \theta_h c_{spec} \right) \bigotimes B_L.  \tag{5.11}
+L_o(v) = \left( \overline{cos} \theta_i c_{diff} + \overline{cos}^m \theta_h c_{spec} \right) \otimes B_L.  \tag{5.11}
 $$
 
 这里使用$B_L$而不是$E_L$由一些历史原因，这个公式不常用在物理光照中，它会有一种把光源增亮的效果。不过这个公式出现的地方没有处理任何关于光强度的问题。如果我们令$B_L = E_L/\pi$，则它跟5.10就更加相像了，只有两个不同：少了$(m + 8)/8$项，以及高光项没有乘上$\overline{cos}\theta_i$。第七章会更详细的介绍这些不同之处。
@@ -83,7 +83,7 @@ $$
 等式5.10只计算了单个光源。不过，场景经常会包含多个光源。光线自然而然需要叠加，所以我们可以叠加各个光源的贡献，以得到整体的着色公式：
 
 $$
-L_o(v) = \sum_{k=1}^n \left( \left( \frac{c_{diff}}{\pi} + \frac{m + 8}{8 \pi} \overline{cos}^m \theta_{h_k} c_{spec} \right) \bigotimes E_{L_k} \overline{cos} \theta_{i_k} \right). \tag{5.12}
+L_o(v) = \sum_{k=1}^n \left( \left( \frac{c_{diff}}{\pi} + \frac{m + 8}{8 \pi} \overline{cos}^m \theta_{h_k} c_{spec} \right) \otimes E_{L_k} \overline{cos} \theta_{i_k} \right). \tag{5.12}
 $$
 
 其中$\theta_{h_k}$表示第k个光源的$\theta_h$。
@@ -96,7 +96,7 @@ $$
 5.12公式该为逐模型计算后：
 
 $$
-L_o(v) = \sum_{k=1}^n \left( \left( K_d + K_s \overline{cos}^m \theta_{h_k} \right) \bigotimes E_{L_k} \overline{cos} \theta_{i_k} \right). \tag{5.13}
+L_o(v) = \sum_{k=1}^n \left( \left( K_d + K_s \overline{cos}^m \theta_{h_k} \right) \otimes E_{L_k} \overline{cos} \theta_{i_k} \right). \tag{5.13}
 $$
 
 其中$K_d = c_{diff}/\pi , K_s = ((m + 8) / 8\pi)c_{spec}$，这部分由cpu计算完成。因为我们只使用方向光，$l_k和E_{L_k}$也是不变的，只需要设置一次。剩下的变量$\theta_{h_k} 和 \theta_{i_k}$则是各处不相同。如之前所说，$\overline{cos} \theta_{i_k}$需要使用$l_k和n$的点积来计算，并约束到[0,1]范围。类似的$\overline{cos} \theta_{h_k}$ 则是$h_k和n$的点积并约束范围。
@@ -149,7 +149,7 @@ float3 Shade(float3 p,
 
 这种不真实感是对非线性的光照参数进行线性插值引起的。这也是为什么不真实感更容易在高光部分出现，因为高光部分的光线参数更加的不线性。
 
-与`Grouaud`着色相对的极端是，完全使用`逐像素求值`着色。这通常称为`Phone shading[1014]`。这个实现中，顶点着色器把世界空间下的法线和位置写入插值的字段，像素着色处理之后传给*Shade()*。返回值则写入输出。需要主要的是：<font color="tomato">即便在顶点着色器中把表面法线处理成单位向量，插值也可能会改变它的长度，所以很有必要在像素着色器中再处理一次</font>。见图5.16。
+与`Grouaud`着色相对的极端是，完全使用`逐像素求值`着色。这通常称为`Phone shading[1014]`。这个实现中，顶点着色器把世界空间下的法线和位置写入插值的字段，像素着色处理之后传给*Shade()*。返回值则写入输出。需要注意的是：<font color="tomato">即便在顶点着色器中把表面法线处理成单位向量，插值也可能会改变它的长度，所以很有必要在像素着色器中再处理一次</font>。见图5.16。
 
 ![图](/images/RTR3.05.16.png)
 图5.16. 对单位长度的法线进行线性插值，结果向量的长度会小于1.
